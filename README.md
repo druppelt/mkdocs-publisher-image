@@ -14,7 +14,7 @@ This repository contains a Dockerized version of MkDocs, a static site generator
 
 - **MkDocs Pre-installed**: A fast, easy-to-use static site generator.
 - **MkDocs Publisher Plugin**: Adds advanced publishing functionality.
-- **Lightweight Image**: Based on the official Python slim image.
+- **Lightweight Image**: Based on the official Python alpine image.
 - **Multi-Architecture Support**: Built for both `amd64` and `arm64`.
 
 ## Usage 🛠️

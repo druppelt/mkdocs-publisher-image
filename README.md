@@ -1,7 +1,7 @@
 # MkDocs Publisher Docker Image 🚀
 
 <p align="center">
-<a href="https://github.com/ALameLlama/mkdocs-publisher-image/actions/workflows/docker-publish.yml"><img src="https://img.shields.io/github/actions/workflow/status/ALameLlama/ray-rust/.github/workflows/publish.yml" alt="Build + Test Status"></a>
+<a href="https://github.com/ALameLlama/mkdocs-publisher-image/actions/workflows/docker-publish.yml"><img src="https://img.shields.io/github/actions/workflow/status/ALameLlama/mkdocs-publisher-image/.github/workflows/docker-publish.yml" alt="Build"></a>
 <a href="https://hub.docker.com/r/alamellama/mkdocs-publisher"><img alt="Docker Image Version" src="https://img.shields.io/docker/v/alamellama/mkdocs-publisher"></a>
 <a href="https://hub.docker.com/r/alamellama/mkdocs-publisher"><img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/alamellama/mkdocs-publisher"></a>
 <a href="https://hub.docker.com/r/alamellama/mkdocs-publisher"><img alt="Docker Image Size (tag)" src="https://img.shields.io/docker/image-size/alamellama/mkdocs-publisher/latest"></a>

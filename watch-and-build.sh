@@ -33,4 +33,5 @@ inotifywait -m -r -e modify,create,delete --exclude '/app/site/.*' /app --format
             break
         fi
     done
-done
+done &
+wait

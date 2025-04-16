@@ -1,11 +1,13 @@
 name: Publish Docker Image 🐳
 
 on:
-  release:
-    types: [published]
+  workflow_run:
+    workflows: ["Finalize Release ⛵"]
+    types: [completed]
 
 jobs:
   docker:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: Docker Image 🐳
     runs-on: ubuntu-latest
 
@@ -44,4 +46,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-

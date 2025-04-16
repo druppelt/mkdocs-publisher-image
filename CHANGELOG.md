@@ -1,3 +1,10 @@
+## v2.2.1 (2025-04-16)
+
+### 👷 CI/CD
+
+- change how we trigger docker publish
+
+
 ## v2.2.0 (2025-04-16)
 
 ### ✨ Features

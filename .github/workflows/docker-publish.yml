@@ -22,8 +22,18 @@ jobs:
         run: |
           git fetch --tags
           TAG=$(git describe --tags --abbrev=0)
+          # Extract version without v prefix
+          VERSION=${TAG#v}
+
           echo "TAG=${TAG}" >> $GITHUB_ENV
+          echo "VERSION=${VERSION}" >> $GITHUB_ENV
+          echo "MAJOR=$(echo $VERSION | cut -d. -f1)" >> $GITHUB_ENV
+          echo "MINOR=$(echo $VERSION | cut -d. -f2)" >> $GITHUB_ENV
+          echo "PATCH=$(echo $VERSION | cut -d. -f3)" >> $GITHUB_ENV
+
           echo "Found tag: ${TAG}"
+          echo "Version: ${VERSION}"
+
           # Check out the tagged commit
           git checkout ${TAG}
 
@@ -39,23 +49,21 @@ jobs:
       - name: Set up Docker Buildx 🔧
         uses: docker/setup-buildx-action@v3
 
-      - name: Extract metadata (tags, labels) 💉
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: alamellama/mkdocs-publisher
-          tags: |
-            type=raw,value=latest
-            type=semver,pattern={{major}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{version}}
+      - name: Set up Docker tags
+        id: docker_tags
+        run: |
+          TAGS="alamellama/mkdocs-publisher:latest"
+          TAGS="${TAGS},alamellama/mkdocs-publisher:${VERSION}"
+          TAGS="${TAGS},alamellama/mkdocs-publisher:${MAJOR}"
+          TAGS="${TAGS},alamellama/mkdocs-publisher:${MAJOR}.${MINOR}"
+          echo "TAGS=${TAGS}" >> $GITHUB_ENV
+          echo "Will push the following tags: ${TAGS}"
 
-      - name: Build distribution 📦
+      - name: Build and push
         uses: docker/build-push-action@v6
         with:
           context: ./
           platforms: linux/amd64,linux/arm64
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ env.TAGS }}

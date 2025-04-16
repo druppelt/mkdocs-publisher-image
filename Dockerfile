@@ -4,7 +4,7 @@ WORKDIR /app
 
 # Install dependencies, including mkdocs, nginx, and inotify-tools
 RUN apk add --no-cache git nginx inotify-tools \
-    && pip install --no-cache-dir mkdocs==1.6.1 mkdocs-publisher==1.4.3 \
+    && pip install --no-cache-dir mkdocs==1.6.1 mkdocs-publisher==1.4.7 \
     && apk del git
 
 # Copy Nginx configuration

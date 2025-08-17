@@ -52,10 +52,10 @@ jobs:
       - name: Set up Docker tags
         id: docker_tags
         run: |
-          TAGS="alamellama/mkdocs-publisher:latest"
-          TAGS="${TAGS},alamellama/mkdocs-publisher:${VERSION}"
-          TAGS="${TAGS},alamellama/mkdocs-publisher:${MAJOR}"
-          TAGS="${TAGS},alamellama/mkdocs-publisher:${MAJOR}.${MINOR}"
+          TAGS="druppelt/mkdocs-publisher:latest"
+          TAGS="${TAGS},druppelt/mkdocs-publisher:${VERSION}"
+          TAGS="${TAGS},druppelt/mkdocs-publisher:${MAJOR}"
+          TAGS="${TAGS},druppelt/mkdocs-publisher:${MAJOR}.${MINOR}"
           echo "TAGS=${TAGS}" >> $GITHUB_ENV
           echo "Will push the following tags: ${TAGS}"
 

@@ -1,3 +1,14 @@
+## v2.3.0 (2025-08-17)
+
+### ✨ Features
+
+- use external web server
+
+### 👷 CI/CD
+
+- trigger release workflow again
+
+
 ## v2.2.4 (2025-04-16)
 
 ### 👷 CI/CD

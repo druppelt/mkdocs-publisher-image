@@ -1,3 +1,10 @@
+## v2.3.2 (2025-08-17)
+
+### 📝 Documentation
+
+- fix remove nginx from readme
+
+
 ## v2.3.1 (2025-08-17)
 
 ### 👷 CI/CD

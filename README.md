@@ -11,14 +11,13 @@
 > [!NOTE]
 > This is a fork. The original image directly serves the site via nginx, while this image just syncs the result to a specific dir, which you then can mount to your own webservers document root.
 
-This repository contains a Dockerized version of `MkDocs`, a static site generator for project documentation, and the `mkdocs-publisher` plugin for enhanced publishing capabilities. The Docker image is designed to simplify hosting and serving MkDocs-based documentation sites with automatic rebuilds and Nginx for serving the generated content.
+This repository contains a Dockerized version of `MkDocs`, a static site generator for project documentation, and the `mkdocs-publisher` plugin for enhanced publishing capabilities. The Docker image is designed to simplify hosting and serving MkDocs-based documentation sites with automatic rebuilds.
 
 ## Features ✨
 
 - **MkDocs Pre-installed**: A fast, easy-to-use static site generator.
 - **MkDocs Publisher Plugin**: Adds advanced publishing functionality.
 - **Automatic Rebuilds**: Watch for file changes and rebuild the site automatically.
-- **Nginx for Serving**: Uses Nginx to serve the generated site at port 80.
 - **Lightweight Image**: Based on the official Python alpine image.
 - **Multi-Architecture Support**: Built for both `amd64` and `arm64`.
 
